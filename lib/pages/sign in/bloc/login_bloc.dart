@@ -17,6 +17,9 @@ class SignInBloc extends Bloc<SignInEvents, SignInState> {
   void _passwordEvent(PasswordEvents event, Emitter<SignInState> emit) {
     emit(state.copyWith(password: event.password));
   }
+
+
+  
   
 
 

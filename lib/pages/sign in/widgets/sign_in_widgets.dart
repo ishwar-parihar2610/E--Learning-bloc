@@ -53,7 +53,8 @@ Widget resuableText(String text) => Container(
       ),
     );
 
-Widget buildTextField(String text, String iconName, String textType) =>
+Widget buildTextField(String text, String iconName, String textType,
+        Function(String) onChanged) =>
     Container(
       width: 325.w,
       height: 50.h,
@@ -73,6 +74,9 @@ Widget buildTextField(String text, String iconName, String textType) =>
             width: 270.w,
             height: 50.h,
             child: TextField(
+             onChanged: (value) {
+               onChanged(value);
+             },
               maxLines: 1,
               // maxLines: null,
               keyboardType: TextInputType.text,
@@ -117,9 +121,11 @@ Widget forgotPassword() => Container(
       ),
     );
 
-Widget buildLogInAndRegButton(String buttonName, String buttonType) =>
+Widget buildLogInAndRegButton(String buttonName, String buttonType, Function onTap) =>
     GestureDetector(
-      onTap: () {},
+      onTap: () {
+        onTap();
+      },
       child: Container(
         width: 325.w,
         height: 50.h,

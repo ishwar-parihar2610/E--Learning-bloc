@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "620239717454",
+    "project_id": "e-leanong-bloc",
+    "storage_bucket": "e-leanong-bloc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:620239717454:android:67fc6174502ec19203af1f",
+        "android_client_info": {
+          "package_name": "com.example.e_learning"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnGnp6QmKCFtAHWhHYbj7igYGiuWYdk0s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
