@@ -29,14 +29,6 @@ class SignInController {
               .signInWithEmailAndPassword(
                   email: emailAddress, password: password);
 
-          if (credential.user == null) {
-            toastInfo(msg: "You Don't exist");
-          }
-
-          if (!credential.user!.emailVerified) {
-            toastInfo(msg: "You need to verify email address");
-          }
-
           var user = credential.user;
           if (user != null) {
             print("user exist");
@@ -47,9 +39,6 @@ class SignInController {
           if (e.code == "INVALID_LOGIN_CREDENTIALS") {
             toastInfo(msg: "User Credentials is wrong");
           }
-          
-
-
         }
       }
     } catch (e) {}

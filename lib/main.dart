@@ -1,7 +1,9 @@
+import 'package:e_learning/common/entities/global.dart';
+import 'package:e_learning/common/values/colors.dart';
 import 'package:e_learning/firebase_options.dart';
-import 'package:e_learning/pages/sign%20in/bloc/login_bloc.dart';
+import 'package:e_learning/pages/bloc_providers.dart';
+import 'package:e_learning/pages/register/register.dart';
 import 'package:e_learning/pages/sign%20in/sign_in.dart';
-import 'package:e_learning/pages/welcome/bloc/welcome_blocs.dart';
 import 'package:e_learning/pages/welcome/welcome.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -22,29 +24,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          lazy: false,
-          create: (context) => WelcomeBloc(),
-        ),
-        BlocProvider(
-          create: (context) => SignInBloc(),
-        ),
-      ],
+      providers: AppBlocProviders.allBlocProviders,
       child: ScreenUtilInit(builder: (context, child) {
         return MaterialApp(
+            navigatorKey: GlobalVariable.navigatorKey,
             title: 'Flutter Demo',
             theme: ThemeData(
               fontFamily: 'LatoRegular',
               appBarTheme: const AppBarTheme(
-                  elevation: 0, backgroundColor: Colors.white),
+                  iconTheme: IconThemeData(color: AppColors.primaryText),
+                  elevation: 0,
+                  backgroundColor: Colors.white),
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               useMaterial3: true,
             ),
-            home: const WelcomeScreenPage(),
+            // home: const WelcomeScreenPage(),
             routes: {
-              "/myHomePage": (context) => const MyHomePage(),
+              "/": (context) => const WelcomeScreenPage(),
               "/signIn": (context) => const SignIn(),
+              "/register": (context) => const Register()
             });
       }),
     );

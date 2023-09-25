@@ -2,7 +2,7 @@ import 'package:e_learning/common/values/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-AppBar buildAppBar() => AppBar(
+AppBar buildAppBar({String title="Log in"}) => AppBar(
       bottom: PreferredSize(
           preferredSize: const Size.fromHeight(1.0),
           child: Container(
@@ -11,7 +11,7 @@ AppBar buildAppBar() => AppBar(
           )),
       centerTitle: true,
       title: Text(
-        "Log in",
+        title,
         style: TextStyle(
             color: AppColors.primaryText,
             fontSize: 16.sp,

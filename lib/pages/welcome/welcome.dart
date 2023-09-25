@@ -69,7 +69,7 @@ class _WelcomeScreenPageState extends State<WelcomeScreenPage> {
                         position: state.page,
                         mainAxisAlignment: MainAxisAlignment.center,
                         decorator: DotsDecorator(
-                            activeColor: Colors.blue,
+                            activeColor: AppColors.primaryElement,
                             activeSize: const Size(18.0, 8.0),
                             activeShape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(5.0)),
