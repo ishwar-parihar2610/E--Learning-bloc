@@ -1,6 +1,7 @@
 import 'package:e_learning/common/entities/global.dart';
 import 'package:e_learning/common/values/colors.dart';
 import 'package:e_learning/firebase_options.dart';
+import 'package:e_learning/pages/application/application_page.dart';
 import 'package:e_learning/pages/bloc_providers.dart';
 import 'package:e_learning/pages/register/register.dart';
 import 'package:e_learning/pages/sign%20in/sign_in.dart';
@@ -42,7 +43,8 @@ class MyApp extends StatelessWidget {
             routes: {
               "/": (context) => const WelcomeScreenPage(),
               "/signIn": (context) => const SignIn(),
-              "/register": (context) => const Register()
+              "/register": (context) => const Register(),
+              "/application": (context) => const ApplicationPage()
             });
       }),
     );

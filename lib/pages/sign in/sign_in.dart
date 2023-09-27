@@ -56,6 +56,8 @@ class _SignInState extends State<SignIn> {
                         SizedBox(height: 5.h),
                         buildTextField(
                             "Enter your email address", "user", "email", (p0) {
+                          print("po is >> $p0");
+
                           context.read<SignInBloc>().add(EmailEvent(email: p0));
                         }),
                         resuableText("Password"),

@@ -1,6 +1,6 @@
 import 'package:e_learning/common/entities/global.dart';
 import 'package:e_learning/common/widgets/flutter_toast.dart';
-import 'package:e_learning/pages/register/bloc/register_controller.dart';
+import 'package:e_learning/pages/register/register_controller.dart';
 import 'package:e_learning/pages/register/bloc/register_events.dart';
 import 'package:e_learning/pages/register/bloc/register_states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

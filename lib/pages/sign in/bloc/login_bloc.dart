@@ -4,13 +4,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SignInBloc extends Bloc<SignInEvents, SignInState> {
   SignInBloc() : super(SignInState()) {
-    on<EmailEvent>((event, emit) => _emailEvent,);
+    on<EmailEvent>(_emailEvent);
 
     on<PasswordEvents>(_passwordEvent);
   }
 
   void _emailEvent(EmailEvent event, Emitter<SignInState> emit) {
     emit(state.copyWith(email: event.email));
+    print("email is current state is >>${state.email} ");
   }
 
   void _passwordEvent(PasswordEvents event, Emitter<SignInState> emit) {

@@ -17,6 +17,7 @@ class SignInController {
         final state = context.read<SignInBloc>().state;
         String emailAddress = state.email;
         String password = state.password;
+        print("emailAddress is >>$emailAddress");
         if (emailAddress.isEmpty) {
           toastInfo(msg: "You need to fill email address");
         }
@@ -31,7 +32,12 @@ class SignInController {
 
           var user = credential.user;
           if (user != null) {
-            print("user exist");
+            print("email required ${user.emailVerified}");
+            if (!user.emailVerified) {
+              toastInfo(msg: "Your email is not verfied");
+            } else {
+              Navigator.pushNamed(context, "/application");
+            }
           } else {
             toastInfo(msg: "Currently you are not a user of this app");
           }
